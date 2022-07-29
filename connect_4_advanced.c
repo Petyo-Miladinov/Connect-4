@@ -36,9 +36,7 @@ int main() {
         } else if (check('O', rows, cols)) {
             printf("\n\nPlayer O wins!\n\n");
             break;  
-        } else {
-            printf("\n\nDraw!\n"); 
-        }  
+        } 
     }
     
     return 0; 
@@ -129,7 +127,7 @@ void choose(int rows, int cols) {
 }
 
 void fill_bin(int rows, int cols) {
-    int level ; 
+    int level; 
 
     for (level = rows-1; level >= 0; level--) {
         if (scores[level][cell] == ' ') {
@@ -142,7 +140,7 @@ void fill_bin(int rows, int cols) {
 int check(char token, int rows, int cols) {
 
     int count;
-    int ways = 4;
+    int ways = rows - 2;
     
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < ways; ++j) {
@@ -156,7 +154,7 @@ int check(char token, int rows, int cols) {
         }
     }
     
-    ways = 3;
+    ways--;
     
     for (int j = 0; j < cols; ++j) {
         for (int i = 0; i < ways; ++i) {
