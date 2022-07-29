@@ -3,14 +3,13 @@
 
 char scores[40][20];
 
-int cell = 0;
 char token = 'X';
 
 void init_scores(int rows, int cols);
 void test_scores(int rows, int cols);
 void board(int rows, int cols);
 void choose(int rows, int cols);
-void fill_bin(int rows, int cols);
+void fill_bin(int rows, int cols, int cell);
 int check(char token, int rows, int cols);
 
 int main() {
@@ -111,7 +110,7 @@ void board(int rows, int cols) {
 
 void choose(int rows, int cols) {
     
-    int c;
+    int c, cell = 0;
     
     while (1) {
         printf("\nChoose: ");
@@ -119,14 +118,14 @@ void choose(int rows, int cols) {
         cell = c - 1; 
         
         if ((cell >= 0 && cell <= cols) && (scores[0][cell] == ' ')) {
-            fill_bin(rows, cols);
+            fill_bin(rows, cols, cell);
             token = (token == 'X') ? 'O' : 'X';
             break;
         }
     }
 }
 
-void fill_bin(int rows, int cols) {
+void fill_bin(int rows, int cols, int cell) {
     int level; 
 
     for (level = rows-1; level >= 0; level--) {
@@ -168,5 +167,5 @@ int check(char token, int rows, int cols) {
         }
     }
 
-    return 0;       
+    return 0; 
 }
