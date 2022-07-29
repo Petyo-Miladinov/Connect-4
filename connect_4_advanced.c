@@ -65,8 +65,6 @@ void test_scores(int rows, int cols) {
 
 void board(int rows, int cols) {
     
-    // char helper_line[] = "|---|---|---|---|---|---|---|";
-    // printf("%s\n", helper_line);
     printf("|");
     for(int i = 0; i < cols; i++) {
         printf("---|");
@@ -84,7 +82,6 @@ void board(int rows, int cols) {
             printf("---|");
         }
         printf("\n"); 
-        //printf("%s\n", helper_line);
     }
 
     FILE *fp; 
@@ -98,7 +95,6 @@ void board(int rows, int cols) {
 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            //printf("| %c ", scores[i][j]);
             fprintf(fp, "| "); 
             fputc(scores[i][j], fp); 
             fprintf(fp, " "); 
