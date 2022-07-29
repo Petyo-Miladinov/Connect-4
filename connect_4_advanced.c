@@ -16,8 +16,17 @@ int main() {
     int rows = 0, cols = 0; 
     printf("Rows: "); 
     scanf("%d", &rows); 
+    while(rows > 20 || rows < 4) {
+        printf("Rows should be less than 20 and at least 4!\n"); 
+        scanf("%d", &rows); 
+    }
+
     printf("\nColumns: "); 
     scanf("%d", &cols); 
+    while(cols > 40 || cols < 4) {
+        printf("Cols should be less than 40 and at least 4!\n"); 
+        scanf("%d", &cols); 
+    }
     printf("\n"); 
 
     init_scores(rows, cols);
